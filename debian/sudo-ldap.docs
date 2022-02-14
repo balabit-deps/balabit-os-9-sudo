@@ -1,0 +1,4 @@
+debian/OPTIONS 
+docs/schema.*
+README.md
+README.LDAP.md

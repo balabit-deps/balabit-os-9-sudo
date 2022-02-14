@@ -1,0 +1,16 @@
+Tests: 01-getroot
+Depends: sudo, adduser
+Restrictions: needs-root
+
+Tests: 02-1003969-audit-no-resolve
+Depends: sudo
+Restrictions: needs-root
+
+# We cannot add 'sudo-ldap' as a Depends: as there is a removal conflict with
+# 'sudo' in Ubuntu and we need to pass the SUDO_FORCE_REMOVE env var to avoid
+# this. Removing sudo conflicts with autopkgtest-virt-ssh, so we skip this test
+# (except for armhf/LXD containers). Needs more investigation...
+Test-Command: systemd-detect-virt -q --container || exit 77; env SUDO_FORCE_REMOVE=yes apt-get -y install sudo-ldap && debian/tests/03-getroot-ldap
+Depends: adduser, slapd, ldap-utils
+Restrictions: needs-root, skippable
+Features: test-name=03-getroot-ldap
