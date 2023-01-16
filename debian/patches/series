@@ -1,3 +1,6 @@
 paths-in-samples.diff
 Whitelist-DPKG_COLORS-environment-variable.diff
 sudo-ldap-docs
+Add-XDG_CURRENT_DESKTOP-to-initial_keepenv_table.patch
+CVE-2022-33070.patch
+CVE-2023-22809.patch

@@ -1,3 +1,24 @@
+sudo (1.9.9-1ubuntu2.2) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: arbitrary file overwrite via sudoedit
+    - debian/patches/CVE-2023-22809.patch: do not permit editor arguments
+      to include -- in plugins/sudoers/editor.c, plugins/sudoers/sudoers.c,
+      plugins/sudoers/visudo.c.
+    - CVE-2023-22809
+  * SECURITY UPDATE: DoS via invalid arithmetic shift in Protobuf-c
+    - debian/patches/CVE-2022-33070.patch: only shift unsigned values in
+      lib/protobuf-c/protobuf-c.c.
+    - CVE-2022-33070
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 16 Jan 2023 07:36:33 -0500
+
+sudo (1.9.9-1ubuntu2.1) jammy; urgency=medium
+
+  * Add XDG_CURRENT_DESKTOP to initial_keepenv_table for Qt to determine the
+    correct theme (LP: #1958055)
+
+ -- Benjamin Drung <bdrung@ubuntu.com>  Thu, 04 Aug 2022 12:35:21 +0200
+
 sudo (1.9.9-1ubuntu2) jammy; urgency=medium
 
   * d/t/control: skip 03-getroot-ldap autopkgtest on non-containers

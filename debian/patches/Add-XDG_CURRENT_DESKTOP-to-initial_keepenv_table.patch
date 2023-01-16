@@ -1,0 +1,29 @@
+From: Benjamin Drung <bdrung@ubuntu.com>
+Date: Fri, 29 Jul 2022 11:35:47 +0200
+Subject: Add XDG_CURRENT_DESKTOP to initial_keepenv_table
+
+Qt needs `XDG_CURRENT_DESKTOP` to be set to determine the correct theme.
+
+Since `DISPLAY` and `XAUTHORITY` are already in the default table of
+variables to preserve in the environment, just add `XDG_CURRENT_DESKTOP`
+to it.
+
+Bug: https://launchpad.net/bugs/1958055
+Forwarded: https://github.com/sudo-project/sudo/pull/165
+Signed-off-by: Benjamin Drung <bdrung@ubuntu.com>
+---
+ plugins/sudoers/env.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/plugins/sudoers/env.c b/plugins/sudoers/env.c
+index f20515f..b1f47d1 100644
+--- a/plugins/sudoers/env.c
++++ b/plugins/sudoers/env.c
+@@ -225,6 +225,7 @@ static const char *initial_keepenv_table[] = {
+     "PS2",
+     "XAUTHORITY",
+     "XAUTHORIZATION",
++    "XDG_CURRENT_DESKTOP",
+     NULL
+ };
+ 
