@@ -1,3 +1,17 @@
+sudo (1.9.9-1ubuntu2.3) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: double free with per-command chroot sudoers rules
+    - debian/patches/CVE-2023-27320.patch: don't free user_cmnd twice in
+      MANIFEST, plugins/sudoers/match_command.c,
+      plugins/sudoers/regress/fuzz/fuzz_sudoers.c,
+      plugins/sudoers/regress/testsudoers/test20.out.ok,
+      plugins/sudoers/regress/testsudoers/test20.sh,
+      plugins/sudoers/testsudoers.c,
+      plugins/sudoers/visudo.c.
+    - CVE-2023-27320
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 01 Mar 2023 08:59:37 -0500
+
 sudo (1.9.9-1ubuntu2.2) jammy-security; urgency=medium
 
   * SECURITY UPDATE: arbitrary file overwrite via sudoedit
