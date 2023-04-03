@@ -1,3 +1,19 @@
+sudo (1.9.9-1ubuntu2.4) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: does not escape control characters
+    - debian/patches/CVE-2023-2848x-1.patch: escape control characters in
+      log messages and sudoreplay output in docs/sudoers.man.in,
+      docs/sudoers.mdoc.in, docs/sudoreplay.man.in,
+      docs/sudoreplay.mdoc.in, include/sudo_lbuf.h,
+      lib/eventlog/eventlog.c, lib/iolog/iolog_json.c, lib/util/lbuf.c,
+      lib/util/util.exp.in, plugins/sudoers/sudoreplay.c.
+    - debian/patches/CVE-2023-2848x-2.patch: fix regression in
+      lib/eventlog/eventlog.c.
+    - CVE-2023-28486
+    - CVE-2023-28487
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 03 Apr 2023 14:00:44 -0400
+
 sudo (1.9.9-1ubuntu2.3) jammy-security; urgency=medium
 
   * SECURITY UPDATE: double free with per-command chroot sudoers rules
