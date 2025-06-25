@@ -1,3 +1,12 @@
+sudo (1.9.9-1ubuntu2.5) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: Local Privilege Escalation via host option
+    - debian/patches/CVE-2025-32462.patch: only allow specifying a host
+      when listing privileges.
+    - CVE-2025-32462
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 25 Jun 2025 08:48:23 -0400
+
 sudo (1.9.9-1ubuntu2.4) jammy-security; urgency=medium
 
   * SECURITY UPDATE: does not escape control characters
