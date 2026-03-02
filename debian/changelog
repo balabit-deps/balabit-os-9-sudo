@@ -1,3 +1,15 @@
+sudo (1.9.9-1ubuntu2.6) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: exec_mailer gid issue (LP: #2143042)
+    - debian/patches/lp2143042.patch: set group as well as uid when running
+      the mailer and make a setuid(), setgid() or setgroups() failure fatal
+      in include/sudo_eventlog.h, lib/eventlog/eventlog.c,
+      lib/eventlog/eventlog_conf.c, plugins/sudoers/logging.c,
+      plugins/sudoers/policy.c.
+    - No CVE number
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 02 Mar 2026 08:08:06 -0500
+
 sudo (1.9.9-1ubuntu2.5) jammy-security; urgency=medium
 
   * SECURITY UPDATE: Local Privilege Escalation via host option
