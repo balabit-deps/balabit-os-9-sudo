@@ -1,3 +1,14 @@
+sudo (1.9.9-1ubuntu2.7) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: NOTBEFORE or NOTAFTER restrictions bypass via TZ
+    - debian/patches/CVE-2026-96512-pre1.patch: sudo: ignore user-specified TZ
+      environment variable in src/sudo.c.
+    - debian/patches/CVE-2026-96512.patch: Remove TZ from sudo's working
+      environment without modifying envp. in src/sudo.c.
+    - CVE-2026-96512
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 06 Oct 2026 10:05:40 -0400
+
 sudo (1.9.9-1ubuntu2.6) jammy-security; urgency=medium
 
   * SECURITY UPDATE: exec_mailer gid issue (LP: #2143042)
